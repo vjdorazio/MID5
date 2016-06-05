@@ -1,0 +1,192 @@
+Country Name	COW Country Code	SVM Country Code
+Afghanistan	AFG	AFG
+Albania	ALB	ALB
+Algeria	ALG	DZA
+Andorra	AND	AND
+Angola	ANG	AGO
+Antigua & Barbuda	AAB	ATG
+Argentina	ARG	ARG
+Armenia	ARM	ARM
+Australia	AUL	AUS
+Austria	AUS	AUT
+Azerbaijan	AZE	AZE
+Bahamas	BHM	BHS
+Bahrain	BAH	BHR
+Bangladesh	BNG	BGD
+Barbados	BAR	BRB
+Belarus	BLR	BLR
+Belgium	BEL	BEL
+Belize	BLZ	BLZ
+Benin	BEN	BEN
+Bhutan	BHU	BTN
+Boliva	BOL	BOL
+Bosnia-Herzegovina	BOS	BIH
+Botswana	BOT	BWA
+Brazil	BRA	BRA
+Brunei	BRU	BRN
+Bulgaria	BUL	BGR
+Burkina-Faso	BFO	BFA
+Burma	MYA	MMR
+Burundi	BUI	BDI
+Cambodia	CAM	KHM
+Cameroun	CAO	CMR
+Canada	CAN	CAN
+Cape Verde	CAP	CPV
+Central African Republic	CEN	CAF
+Chad	CHA	TCD
+Chile	CHL	CHL
+China	CHN	CHN
+Colombia	COL	COL
+Comoros	COM	COM
+Congo	CON	COG
+"Congo, Dem. Rep. of"	DRC	COD
+Costa Rica	CPS	CRI
+Croatia	CRO	HRV
+Cuba	CUB	CUB
+Cyprus	CYP	CYP
+Czech Republic	CZR	CZE
+Denmark	DEN	DNK
+Djibouti	DJI	DJI
+Dominica	DMA	DMA
+Dominican Republic	DOM	DOM
+Ecuador	ECU	ECU
+Egypt	EGY	EGY
+El Salvador	SAL	SLV
+Equatorial Guinea	EQG	GNQ
+Eritrea	ERI	ERI
+Estonia	EST	EST
+Ethiopia	ETH	ETH
+Federated States of Micronesia	FSM	FSM
+Fiji	FIJ	FJI
+Finland	FIN	FIN
+France	FRN	FRA
+Gabon	GAB	GAB
+Gambia	GAM	GMB
+Georgia	GRG	GEO
+Germany	GMY	DEU
+Ghana	GHA	GHA
+Greece	GRC	GRC
+Grenada	GRN	GRD
+Guatemala	GUA	GTM
+Guinea	GUI	GIN
+Guinea-Bissau	GNB	GNB
+Guyana	GUY	GUY
+Haiti	HAI	HTI
+Honduras	HON	HND
+Hungary	HUN	HUN
+Iceland	ICE	ISL
+India	IND	IND
+Indonesia	INS	IDN
+Iran	IRN	IRN
+Iraq	IRQ	IRQ
+Ireland	IRE	IRL
+Israel	ISR	ISR
+Italy	ITA	ITA
+Ivory Coast	CDI	CIV
+Jamaica	JAM	JAM
+Japan	JPN	JPN
+Jordan	JOR	JOR
+Kazakhstan	KZK	KAZ
+Kenya	KEN	KEN
+Kiribati	KIR	KIR
+"Korea, North"	PRK	PRK
+"Korea, South"	ROK	KOR
+Kuwait	KUW	KWT
+Kyrgyz Republic	KYR	KGZ
+Laos	LAO	LAO
+Latvia	LAT	LVA
+Lebanon 	LEB	LBN
+Lesotho	LES	LSO
+Liberia	LBR	LBR
+Libya	LIB	LBY
+Liechtenstein	LIE	LIE
+Lithuania	LIT	LTU
+Luxemburg	LUX	LUX
+Macedonia	MAC	MKD
+Madagascar	MAG	MDG
+Malawi	MAW	MWI
+Malaysia	MAL	MYS
+Maldive Islands	MAD	MDV
+Mali	MLI	MLI
+Malta	MLT	MLT
+Marshall Islands	MSI	MHL
+Mauritania	MAA	MRT
+Mauritius	MAS	MUS
+Mexico	MEX	MEX
+Moldova	MLD	MDA
+Monaco	MNC	MCO
+Mongolia	MON	MNG
+Morocco	MOR	MAR
+Mozambique	MZM	MOZ
+Namibia	NAM	NAM
+Nauru	NAU	NRU
+Nepal	NEP	NPL
+Netherlands	NTH	NLD
+New Zealand	NEW	NZL
+Nicaragua	NIC	NIC
+Niger	NIR	NER
+Nigeria	NIG	NGA
+Norway	NOR	NOR
+Oman	OMA	OMN
+Pakistan	PAK	PAK
+Palau	PAL	PLW
+Panama	PAN	PAN
+Papua New Guinea	PNG	PNG
+Paraguay	PAR	PRY
+Peru	PER	PER
+Philippines	PHI	PHL
+Poland	POL	POL
+Portugal	POR	PRT
+Qatar	QAT	QAT
+Republic of China (Taiwan)	TAW	TWN
+Rumania	RUM	ROU
+Russia	RUS	RUS
+Rwanda	RWA	RWA
+San Marino	SNM	SMR
+Sao Tome-Principe	STP	STP
+Saudi Arabia	SAU	SAU
+Senegal	SEN	SEN
+Seychelles	SEY	SYC
+Sierra Leone	SIE	SLE
+Singapore	SIN	SGP
+Slovakia	SLO	SVK
+Slovenia	SLV	SVN
+Solomon Islands	SOL	SLB
+Somalia	SOM	SOM
+South Africa	SAF	ZAF
+Spain	SPN	ESP
+Sri Lanka	SRI	LKA
+St. Kitts-Nevis	SKN	KNA
+St. Lucia	SLU	LCA
+St. Vincent and the Grenadines	SVG	VCT
+Sudan	SUD	SDN
+Surinam	SUR	SUR
+Swaziland	SWA	SWZ
+Sweden	SWD	SWE
+Switzerland	SWZ	CHE
+Syria	SYR	SYR
+Tajikistan	TAJ	TJK
+Tanzania	TAZ	TZA
+Thailand	THI	THA
+Togo	TOG	TGO
+Tonga	TON 	TON
+Trinidad and Tobago	TRI	TTO
+Tunisia	TUN	TUN
+Turkey	TUR	TUR
+Turkmenistan	TKM	TKM
+Tuvalu	TUV	TUV
+Uganda	UGA	UGA
+Ukraine	UKR	UKR
+United Arab Emirates	UAE	ARE
+United Kingdom	UKG	GBR
+United States of America	USA	USA
+Uruguay	URU	URY
+Uzbekistan	UZB	UZB
+Vanuatu	VAN	VUT
+Venezuela	VEN	VEN
+Vietnam	VTM	VNM
+Western Samoa	WSM	WSM
+Yemen	YEM	YEM
+Yugoslavia	YUG	YUG
+Zambia	ZAM	ZMB
+Zimbabwe	ZIM	ZWE
