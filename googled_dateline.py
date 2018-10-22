@@ -4,6 +4,7 @@
 ##  Contact: vjdorazio@gmail.com
 ##
 ## Reads in the semi-structed text in 'MID' format in 'sorted_pos.txt' file and adds two fields: GoogledDateline and AmericanDateline
+## python v2
 
 import sqlite3
 import re # for checking if input is valid python regex
@@ -39,6 +40,7 @@ for line in f:
             dateline=unicode(m.group(0),errors='ignore')
             apiurl = url+'address='+dateline+apikey
             response = requests.get(apiurl)
+            print response
             myr = response.json()
         
             if(myr['status']=="OK"):

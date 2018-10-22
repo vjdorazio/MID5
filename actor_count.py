@@ -5,6 +5,7 @@
 ##
 ## Reads in the semi-structed text in 'MID' format from "sorted_pos2.txt" and adds one field: Countries
 ## Takes Schrodt's 'CountryInfo' file as input
+## python v2
 
 import re # for checking if input is valid python regex
 import sys

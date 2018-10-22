@@ -5,6 +5,7 @@
 ##
 ## Reads in the semi-structed text in 'MID' format and writes it to a database.
 ## Assumes a sqlite3 database called 'middb' exists
+## python v2
 
 import sqlite3
 import re # for checking if input is valid python regex
