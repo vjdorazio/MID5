@@ -262,6 +262,7 @@ def FilterFactiva (myfout, mybody, myfilename, mytout, mn):
         ## Checking if "HD"
         myregex = re.compile("HD")
         mymatch = myregex.match(val)
+     #   print(val)
         if(mymatch != None):
             gotHD = ka+1; # index of the headline
             continue
@@ -416,7 +417,7 @@ for entry in json_data:
                 lastline=infile.tell()
         
             storyN = storyN+1
-            if(docsource=="factiva"):
+            if(docsource=="Factiva"):
                 t = FilterFactiva(fout, body, filename, tout, month_number)
             else:
                 t = Filter(fout, body, filename, tout, month_number)
