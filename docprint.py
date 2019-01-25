@@ -13,7 +13,7 @@
 ##
 ## python 3.4.3
 
-## List of subroutines: TrimString, Filter, FilterFactiva
+## List of subroutines: TrimString, Filter, FilterFactiva, FilterFactivaJME
 
 
 import glob # for extracting list of files in a location
@@ -358,6 +358,113 @@ def FilterFactiva (myfout, mybody, myfilename, mytout, mn):
     return(out)
 
 
+def FilterFactivaJME (myfout, mybody, myfilename, mytout, mn):
+    #takes a body between a DOC and language tags
+    #prints relevant news into output files
+    
+    # used for indexing purposes
+    firsttext = 0
+    gotHD=gotWC=gotPD=gotET=gotSN=gotSC=gotLA=gotCY=gotPUB=0
+    ktext = 0
+    fh = myfout
+    fh2 = mytout
+    
+    # text of news story
+    text = "" # the body of the news story
+    
+    # output per news story
+    headline = "Headline Not Found"
+    dateline = "Dateline Not Found"
+    source = "" # here we are using source as a catch-all for metadata
+    byline = "Byline Not Found"
+    section = "Section Not Found"
+    storylength = "Length Not Found"
+    language = "Language Not Found"
+    subject = "Subject not found"
+    org = "Organization not found"
+    geog = "Geographic not found"
+    loaddate = "Load-date not found"
+    pubtype = "Publication-type not found"
+    key = "" # every story gets assigned a key after MATCH finishes
+    date = ""
+    collection = myfilename;
+    
+    values = mybody.split('\n')
+    for ka in range(len(values)):
+        val = values[ka]
+        val=val.strip()
+    
+        # Skipping blank lines
+        if not val:
+            continue
+
+        ## For FactivaJME, there aren't many good identifiers for metadata in the text
+        
+        ## headlines are always assumed to be the first text
+        if(headline == "Headline Not Found"):
+            headline = val+" "
+            gotHD = ka
+            continue
+            
+        ## Checking if "PD"
+        myregex = re.compile("(\d+) (\w+) (\d\d\d\d)")
+        mymatch = myregex.match(val)
+        if(mymatch != None):
+            if date=="":
+                    mmonth=str(mymatch.group(2))
+                    mday = str(mymatch.group(1))
+                    myear = str(mymatch.group(3))
+                    mmonth=mmonth[:3]
+                    if mmonth in mn:
+                        monthno = mn[mmonth]; # convert month to numeric
+                        dayno = "";
+                        if (len(mday) == 2):
+                            dayno = mday
+                        else:
+                            dayno = '0'+mday
+                        newdate = myear+str(monthno)+dayno
+                        date=newdate
+                        gotPD=ka
+                        continue
+
+        ## All Rights Reserved seems to be the most consistent text to appear very close to the body
+        if(firsttext==0):
+            myregex = re.compile("all rights reserved", re.IGNORECASE)
+            mymatch = myregex.search(val)
+            if(mymatch != None):
+                val.strip()
+                source = source+val+" "
+                firsttext = ka+1; # index of the word count
+                continue
+            else:
+                val.strip()
+                source = source+val+" "
+                continue
+
+
+        ## Establishing the body of the text.
+        ## The program rid.pl has been incorporated here.
+        text = text+val+"\n"
+        text.lstrip() #remove leading whites
+        #     text =~ tr/\x00-\x08//d;  #remove between 0-8 inclusive
+        #text =~ tr/\x0B-\x1F//d;   #remove between 11-31
+        #text =~ tr/\x80-\xFF//d;   #remove above 128-255
+  
+    # If text is empty, because no 'all rights reserved', adding all of source to text
+    if(text == ""):
+        text = source+"\n"
+    
+    # Assign the story a key
+    key = str(uuid.uuid4());
+    t = {'collection':collection, 'headline':headline, 'date':date, 'source':source, 'dateline':dateline, 'byline':byline, 'text':text, 'language':language, 'subject':subject, 'organization':org, 'geographic':geog, 'loaddate':loaddate, 'pubtype':pubtype}
+    out = {key:t}
+
+
+   # this is where the summary file is written out. note, much is dropped here for factivajme
+    fh2.write(headline+"\t"+key+"\t"+collection+"\t"+date+"\n")
+    return(out)
+
+
 #####################################
 # ======== main program =========== #
 #####################################
@@ -367,11 +474,12 @@ if(outformat!="json" and outformat != "MID"):
     print ("Not a valid entry. Exiting")
     sys.exit()
 
-docsource=input("\nAre the documents from LexisNexis or Factiva? Please enter \'LexisNexis\' or \'Factiva\': ")
-if(docsource!="lexisnexis" and docsource != "factiva" and docsource!="LexisNexis" and docsource != "Factiva"):
+docsource=input("\nAre the documents from LexisNexis or Factiva? Please enter \'LexisNexis\' or \'Factiva\' or \'FactivaJME\': ")
+if(docsource!="lexisnexis" and docsource != "factiva" and docsource!="LexisNexis" and docsource != "Factiva" and docsource!="FactivaJME" and docsource != "factivajme"):
     print ("Not a valid entry. Exiting")
     sys.exit()
 
+docsource.lower()
 
 # open files #
 with open("filedelim.json") as json_file:
@@ -417,8 +525,10 @@ for entry in json_data:
                 lastline=infile.tell()
         
             storyN = storyN+1
-            if(docsource=="Factiva"):
+            if(docsource=="factiva"):
                 t = FilterFactiva(fout, body, filename, tout, month_number)
+            elif(docsource=="factivajme"):
+                t = FilterFactivaJME(fout, body, filename, tout, month_number)
             else:
                 t = Filter(fout, body, filename, tout, month_number)
             # print ("Story " + str(storyN))
