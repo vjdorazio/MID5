@@ -479,7 +479,7 @@ if(docsource!="lexisnexis" and docsource != "factiva" and docsource!="LexisNexis
     print ("Not a valid entry. Exiting")
     sys.exit()
 
-docsource.lower()
+docsource=docsource.lower()
 
 # open files #
 with open("filedelim.json") as json_file:
